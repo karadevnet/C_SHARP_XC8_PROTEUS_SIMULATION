@@ -1,0 +1,111 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1829 ]
+[d frameptr 6 ]
+"10 C:\PROGRA~1\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\PROGRA~1\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\PROGRA~1\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"4 D:\C#_XC8_PROTEUS_SIM\SOFTWARE_FOR_SIMULATION\initcpu.c
+[v _initcpu initcpu `(v  1 e 1 0 ]
+"8 D:\C#_XC8_PROTEUS_SIM\SOFTWARE_FOR_SIMULATION\main.c
+[v _main main `(v  1 e 1 0 ]
+"429 C:\PROGRA~1\Microchip\xc8\v2.45\pic\include\proc\pic16f1829.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"479
+[v _PORTB PORTB `VEuc  1 e 1 @13 ]
+"518
+[v _PORTC PORTC `VEuc  1 e 1 @14 ]
+"1185
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1235
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1274
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1515
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
+"1766
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+[s S93 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"1972
+[s S101 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S105 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S108 . 1 `S93 1 . 1 0 `S101 1 . 1 0 `S105 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES108  1 e 1 @157 ]
+[s S63 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+`uc 1 ADNREF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2049
+[s S72 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS 1 0 :3:4 
+]
+[u S76 . 1 `S63 1 . 1 0 `S72 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES76  1 e 1 @158 ]
+"2099
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2144
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2183
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2950
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2997
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3033
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"3549
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3607
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"3655
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"5851
+[v _INLVLA INLVLA `VEuc  1 e 1 @908 ]
+"5909
+[v _INLVLB INLVLB `VEuc  1 e 1 @909 ]
+"5957
+[v _INLVLC INLVLC `VEuc  1 e 1 @910 ]
+"7839
+[v _LATC0 LATC0 `VEb  1 e 0 @2160 ]
+"7842
+[v _LATC1 LATC1 `VEb  1 e 0 @2161 ]
+"7845
+[v _LATC2 LATC2 `VEb  1 e 0 @2162 ]
+"7848
+[v _LATC3 LATC3 `VEb  1 e 0 @2163 ]
+"7851
+[v _LATC4 LATC4 `VEb  1 e 0 @2164 ]
+"8 D:\C#_XC8_PROTEUS_SIM\SOFTWARE_FOR_SIMULATION\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"44
+} 0
+"4 D:\C#_XC8_PROTEUS_SIM\SOFTWARE_FOR_SIMULATION\initcpu.c
+[v _initcpu initcpu `(v  1 e 1 0 ]
+{
+"37
+} 0
