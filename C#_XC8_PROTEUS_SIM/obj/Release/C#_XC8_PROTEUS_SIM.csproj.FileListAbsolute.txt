@@ -1,0 +1,10 @@
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\bin\Release\C#_XC8_PROTEUS_SIM.exe.config
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\bin\Release\C#_XC8_PROTEUS_SIM.exe
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\bin\Release\C#_XC8_PROTEUS_SIM.pdb
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C#_XC8_PROTEUS_SIM.csproj.AssemblyReference.cache
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C__XC8_PROTEUS_SIM.Form1.resources
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C__XC8_PROTEUS_SIM.Properties.Resources.resources
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C#_XC8_PROTEUS_SIM.csproj.GenerateResource.cache
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C#_XC8_PROTEUS_SIM.csproj.CoreCompileInputs.cache
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C#_XC8_PROTEUS_SIM.exe
+D:\C#_XC8_PROTEUS_SIM\C#_XC8_PROTEUS_SIM\obj\Release\C#_XC8_PROTEUS_SIM.pdb
