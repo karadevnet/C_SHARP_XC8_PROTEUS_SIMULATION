@@ -1,0 +1,15 @@
+#pragma config FOSC = INTOSC
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config CLKOUTEN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config WRT = OFF
+#pragma config PLLEN = OFF
+#pragma config STVREN = OFF
+#pragma config BORV = LO
+#pragma config LVP = OFF

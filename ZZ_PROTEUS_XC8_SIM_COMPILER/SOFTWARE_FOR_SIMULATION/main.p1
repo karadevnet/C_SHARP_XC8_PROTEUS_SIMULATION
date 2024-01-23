@@ -1,0 +1,445 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"4 ./initcpu.h
+[v _initcpu `(v ~T0 @X0 0 ef ]
+"7839 C:\PROGRA~1\Microchip\xc8\v2.45\pic\include\proc\pic16f1829.h
+[v _LATC0 `Vb ~T0 @X0 0 e@2160 ]
+[v F202 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\PROGRA~1\Microchip\xc8\v2.45\pic\include\builtins.h
+[v __delay `JF202 ~T0 @X0 0 e ]
+[p i __delay ]
+"7842 C:\PROGRA~1\Microchip\xc8\v2.45\pic\include\proc\pic16f1829.h
+[v _LATC1 `Vb ~T0 @X0 0 e@2161 ]
+"7845
+[v _LATC2 `Vb ~T0 @X0 0 e@2162 ]
+"7848
+[v _LATC3 `Vb ~T0 @X0 0 e@2163 ]
+"7851
+[v _LATC4 `Vb ~T0 @X0 0 e@2164 ]
+"54 C:\PROGRA~1\Microchip\xc8\v2.45\pic\include\proc\pic16f1829.h
+[; <" INDF0 equ 00h ;# ">
+"74
+[; <" INDF1 equ 01h ;# ">
+"94
+[; <" PCL equ 02h ;# ">
+"114
+[; <" STATUS equ 03h ;# ">
+"177
+[; <" FSR0L equ 04h ;# ">
+"197
+[; <" FSR0H equ 05h ;# ">
+"221
+[; <" FSR1L equ 06h ;# ">
+"241
+[; <" FSR1H equ 07h ;# ">
+"261
+[; <" BSR equ 08h ;# ">
+"313
+[; <" WREG equ 09h ;# ">
+"333
+[; <" PCLATH equ 0Ah ;# ">
+"353
+[; <" INTCON equ 0Bh ;# ">
+"431
+[; <" PORTA equ 0Ch ;# ">
+"481
+[; <" PORTB equ 0Dh ;# ">
+"520
+[; <" PORTC equ 0Eh ;# ">
+"582
+[; <" PIR1 equ 011h ;# ">
+"644
+[; <" PIR2 equ 012h ;# ">
+"695
+[; <" PIR3 equ 013h ;# ">
+"735
+[; <" PIR4 equ 014h ;# ">
+"761
+[; <" TMR0 equ 015h ;# ">
+"781
+[; <" TMR1 equ 016h ;# ">
+"788
+[; <" TMR1L equ 016h ;# ">
+"808
+[; <" TMR1H equ 017h ;# ">
+"828
+[; <" T1CON equ 018h ;# ">
+"900
+[; <" T1GCON equ 019h ;# ">
+"970
+[; <" TMR2 equ 01Ah ;# ">
+"990
+[; <" PR2 equ 01Bh ;# ">
+"1010
+[; <" T2CON equ 01Ch ;# ">
+"1081
+[; <" CPSCON0 equ 01Eh ;# ">
+"1141
+[; <" CPSCON1 equ 01Fh ;# ">
+"1187
+[; <" TRISA equ 08Ch ;# ">
+"1237
+[; <" TRISB equ 08Dh ;# ">
+"1276
+[; <" TRISC equ 08Eh ;# ">
+"1338
+[; <" PIE1 equ 091h ;# ">
+"1400
+[; <" PIE2 equ 092h ;# ">
+"1451
+[; <" PIE3 equ 093h ;# ">
+"1491
+[; <" PIE4 equ 094h ;# ">
+"1517
+[; <" OPTION_REG equ 095h ;# ">
+"1600
+[; <" PCON equ 096h ;# ">
+"1651
+[; <" WDTCON equ 097h ;# ">
+"1710
+[; <" OSCTUNE equ 098h ;# ">
+"1768
+[; <" OSCCON equ 099h ;# ">
+"1840
+[; <" OSCSTAT equ 09Ah ;# ">
+"1902
+[; <" ADRES equ 09Bh ;# ">
+"1909
+[; <" ADRESL equ 09Bh ;# ">
+"1929
+[; <" ADRESH equ 09Ch ;# ">
+"1949
+[; <" ADCON0 equ 09Dh ;# ">
+"2029
+[; <" ADCON1 equ 09Eh ;# ">
+"2101
+[; <" LATA equ 010Ch ;# ">
+"2146
+[; <" LATB equ 010Dh ;# ">
+"2185
+[; <" LATC equ 010Eh ;# ">
+"2247
+[; <" CM1CON0 equ 0111h ;# ">
+"2304
+[; <" CM1CON1 equ 0112h ;# ">
+"2370
+[; <" CM2CON0 equ 0113h ;# ">
+"2427
+[; <" CM2CON1 equ 0114h ;# ">
+"2493
+[; <" CMOUT equ 0115h ;# ">
+"2519
+[; <" BORCON equ 0116h ;# ">
+"2546
+[; <" FVRCON equ 0117h ;# ">
+"2622
+[; <" DACCON0 equ 0118h ;# ">
+"2683
+[; <" DACCON1 equ 0119h ;# ">
+"2735
+[; <" SRCON0 equ 011Ah ;# ">
+"2806
+[; <" SRCON1 equ 011Bh ;# ">
+"2868
+[; <" APFCON0 equ 011Dh ;# ">
+"2902
+[; <" APFCON1 equ 011Eh ;# ">
+"2952
+[; <" ANSELA equ 018Ch ;# ">
+"2999
+[; <" ANSELB equ 018Dh ;# ">
+"3035
+[; <" ANSELC equ 018Eh ;# ">
+"3094
+[; <" EEADR equ 0191h ;# ">
+"3101
+[; <" EEADRL equ 0191h ;# ">
+"3121
+[; <" EEADRH equ 0192h ;# ">
+"3141
+[; <" EEDAT equ 0193h ;# ">
+"3148
+[; <" EEDATL equ 0193h ;# ">
+"3153
+[; <" EEDATA equ 0193h ;# ">
+"3186
+[; <" EEDATH equ 0194h ;# ">
+"3206
+[; <" EECON1 equ 0195h ;# ">
+"3268
+[; <" EECON2 equ 0196h ;# ">
+"3288
+[; <" RCREG equ 0199h ;# ">
+"3308
+[; <" TXREG equ 019Ah ;# ">
+"3328
+[; <" SPBRG equ 019Bh ;# ">
+"3335
+[; <" SPBRGL equ 019Bh ;# ">
+"3355
+[; <" SPBRGH equ 019Ch ;# ">
+"3375
+[; <" RCSTA equ 019Dh ;# ">
+"3437
+[; <" TXSTA equ 019Eh ;# ">
+"3499
+[; <" BAUDCON equ 019Fh ;# ">
+"3551
+[; <" WPUA equ 020Ch ;# ">
+"3609
+[; <" WPUB equ 020Dh ;# ">
+"3657
+[; <" WPUC equ 020Eh ;# ">
+"3727
+[; <" SSP1BUF equ 0211h ;# ">
+"3732
+[; <" SSPBUF equ 0211h ;# ">
+"3765
+[; <" SSP1ADD equ 0212h ;# ">
+"3770
+[; <" SSPADD equ 0212h ;# ">
+"3803
+[; <" SSP1MSK equ 0213h ;# ">
+"3808
+[; <" SSPMSK equ 0213h ;# ">
+"3841
+[; <" SSP1STAT equ 0214h ;# ">
+"3846
+[; <" SSPSTAT equ 0214h ;# ">
+"3963
+[; <" SSP1CON1 equ 0215h ;# ">
+"3968
+[; <" SSPCON1 equ 0215h ;# ">
+"3972
+[; <" SSPCON equ 0215h ;# ">
+"4167
+[; <" SSP1CON2 equ 0216h ;# ">
+"4172
+[; <" SSPCON2 equ 0216h ;# ">
+"4289
+[; <" SSP1CON3 equ 0217h ;# ">
+"4294
+[; <" SSPCON3 equ 0217h ;# ">
+"4411
+[; <" SSP2BUF equ 0219h ;# ">
+"4431
+[; <" SSP2ADD equ 021Ah ;# ">
+"4451
+[; <" SSP2MSK equ 021Bh ;# ">
+"4471
+[; <" SSP2STAT equ 021Ch ;# ">
+"4533
+[; <" SSP2CON1 equ 021Dh ;# ">
+"4603
+[; <" SSP2CON2 equ 021Eh ;# ">
+"4665
+[; <" SSP2CON3 equ 021Fh ;# ">
+"4727
+[; <" CCPR1 equ 0291h ;# ">
+"4734
+[; <" CCPR1L equ 0291h ;# ">
+"4754
+[; <" CCPR1H equ 0292h ;# ">
+"4774
+[; <" CCP1CON equ 0293h ;# ">
+"4856
+[; <" PWM1CON equ 0294h ;# ">
+"4926
+[; <" CCP1AS equ 0295h ;# ">
+"4931
+[; <" ECCP1AS equ 0295h ;# ">
+"5088
+[; <" PSTR1CON equ 0296h ;# ">
+"5132
+[; <" CCPR2 equ 0298h ;# ">
+"5139
+[; <" CCPR2L equ 0298h ;# ">
+"5159
+[; <" CCPR2H equ 0299h ;# ">
+"5179
+[; <" CCP2CON equ 029Ah ;# ">
+"5261
+[; <" PWM2CON equ 029Bh ;# ">
+"5331
+[; <" CCP2AS equ 029Ch ;# ">
+"5413
+[; <" PSTR2CON equ 029Dh ;# ">
+"5457
+[; <" CCPTMRS equ 029Eh ;# ">
+"5462
+[; <" CCPTMRS0 equ 029Eh ;# ">
+"5631
+[; <" CCPR3 equ 0311h ;# ">
+"5638
+[; <" CCPR3L equ 0311h ;# ">
+"5658
+[; <" CCPR3H equ 0312h ;# ">
+"5678
+[; <" CCP3CON equ 0313h ;# ">
+"5742
+[; <" CCPR4 equ 0318h ;# ">
+"5749
+[; <" CCPR4L equ 0318h ;# ">
+"5769
+[; <" CCPR4H equ 0319h ;# ">
+"5789
+[; <" CCP4CON equ 031Ah ;# ">
+"5853
+[; <" INLVLA equ 038Ch ;# ">
+"5911
+[; <" INLVLB equ 038Dh ;# ">
+"5959
+[; <" INLVLC equ 038Eh ;# ">
+"6029
+[; <" IOCAP equ 0391h ;# ">
+"6087
+[; <" IOCAN equ 0392h ;# ">
+"6145
+[; <" IOCAF equ 0393h ;# ">
+"6203
+[; <" IOCBP equ 0394h ;# ">
+"6251
+[; <" IOCBN equ 0395h ;# ">
+"6299
+[; <" IOCBF equ 0396h ;# ">
+"6347
+[; <" CLKRCON equ 039Ah ;# ">
+"6423
+[; <" MDCON equ 039Ch ;# ">
+"6474
+[; <" MDSRC equ 039Dh ;# ">
+"6527
+[; <" MDCARL equ 039Eh ;# ">
+"6592
+[; <" MDCARH equ 039Fh ;# ">
+"6657
+[; <" TMR4 equ 0415h ;# ">
+"6677
+[; <" PR4 equ 0416h ;# ">
+"6697
+[; <" T4CON equ 0417h ;# ">
+"6768
+[; <" TMR6 equ 041Ch ;# ">
+"6788
+[; <" PR6 equ 041Dh ;# ">
+"6808
+[; <" T6CON equ 041Eh ;# ">
+"6879
+[; <" STATUS_SHAD equ 0FE4h ;# ">
+"6911
+[; <" WREG_SHAD equ 0FE5h ;# ">
+"6931
+[; <" BSR_SHAD equ 0FE6h ;# ">
+"6951
+[; <" PCLATH_SHAD equ 0FE7h ;# ">
+"6971
+[; <" FSR0L_SHAD equ 0FE8h ;# ">
+"6991
+[; <" FSR0H_SHAD equ 0FE9h ;# ">
+"7011
+[; <" FSR1L_SHAD equ 0FEAh ;# ">
+"7031
+[; <" FSR1H_SHAD equ 0FEBh ;# ">
+"7051
+[; <" STKPTR equ 0FEDh ;# ">
+"7071
+[; <" TOSL equ 0FEEh ;# ">
+"7091
+[; <" TOSH equ 0FEFh ;# ">
+"1 ./fuse.h
+[p x FOSC  =  INTOSC ]
+"2
+[p x WDTE  =  OFF ]
+"3
+[p x PWRTE  =  OFF ]
+"4
+[p x MCLRE  =  OFF ]
+"5
+[p x CP  =  OFF ]
+"6
+[p x CPD  =  OFF ]
+"7
+[p x BOREN  =  OFF ]
+"8
+[p x CLKOUTEN  =  OFF ]
+"9
+[p x IESO  =  OFF ]
+"10
+[p x FCMEN  =  OFF ]
+"11
+[p x WRT  =  OFF ]
+"12
+[p x PLLEN  =  OFF ]
+"13
+[p x STVREN  =  OFF ]
+"14
+[p x BORV  =  LO ]
+"15
+[p x LVP  =  OFF ]
+"6 main.c
+[v _channel_select `uc ~T0 @X0 1 e ]
+[i _channel_select
+-> -> 0 `i `uc
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"8
+[v _main `(v ~T0 @X0 1 ef ]
+"9
+{
+[e :U _main ]
+[f ]
+[e ( _initcpu ..  ]
+"11
+[e :U 377 ]
+"12
+{
+"13
+[e = _LATC0 -> -> 1 `i `b ]
+"14
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"15
+[e = _LATC0 -> -> 0 `i `b ]
+"16
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"19
+[e = _LATC1 -> -> 1 `i `b ]
+"20
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"21
+[e = _LATC1 -> -> 0 `i `b ]
+"22
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"25
+[e = _LATC2 -> -> 1 `i `b ]
+"26
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"27
+[e = _LATC2 -> -> 0 `i `b ]
+"28
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"31
+[e = _LATC3 -> -> 1 `i `b ]
+"32
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"33
+[e = _LATC3 -> -> 0 `i `b ]
+"34
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"36
+[e = _LATC4 -> -> 1 `i `b ]
+"37
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"38
+[e = _LATC4 -> -> 0 `i `b ]
+"39
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"41
+}
+[e :U 376 ]
+[e $U 377  ]
+[e :U 378 ]
+"43
+[e $UE 375  ]
+"44
+[e :UE 375 ]
+}

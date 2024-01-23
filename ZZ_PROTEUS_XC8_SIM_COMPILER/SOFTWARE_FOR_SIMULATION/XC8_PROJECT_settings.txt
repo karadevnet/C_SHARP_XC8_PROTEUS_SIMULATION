@@ -1,0 +1,26 @@
+// set here options for current
+// project in current folder
+// if you make some changes
+// in this file, save file
+// and restart the program
+// project name
+PROJECTNAME=TESTXC8COMPILER
+// project description
+PROJECTDESCRIPTION=using PIC16F1829 for test
+// set microchip device for project
+PICDEVICE=PIC16F1829
+// set default version of XC8 compiler
+XC8_VERSION=xc8\v2.45
+// set default optimization for project
+OPTIMIZATION=LEVEL 0
+// set offset value for project
+OFFSETVALUE=0
+//example commands for test in CMD window
+// example of using CMD command for compiler
+//string COMPILER_COMMAND = "C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=18F47K42 -O2 -o main.hex main.c initcpu.c -mcodeoffset=1000\r\n";
+
+// echo in CMD executed command put all in one
+//string COMPILER_COMMAND = "/K echo C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=18F47K42 -O2 -o main.hex main.c initcpu.c -mcodeoffset=1000\r\n";
+
+// example for execute working command for project
+// COMPILER_COMMAND = "/K C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=16F1829 -o main.hex main.c initcpu.c\r\n";
