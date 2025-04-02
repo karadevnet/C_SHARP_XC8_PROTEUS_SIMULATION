@@ -91,10 +91,18 @@ namespace C__XC8_PROTEUS_SIM
           foreach (string xc8_folder in xc8_folders_array)
           {
             comboBox1.Items.Add(xc8_folder.Substring(27));
-            comboBox1.SelectedIndex = 0;
+            //comboBox1.SelectedIndex = 0;
           }
+		      
+                comboBox1.BackColor = Color.LimeGreen;
 
-          comboBox1.BackColor = Color.LimeGreen;
+
+              
+           }
+            else
+		{
+			comboBox1.BackColor = Color.Red;
+			comboBox1.Text = "NO XC8";
         }
             
       // found if PROTEUS is installed
@@ -149,75 +157,104 @@ namespace C__XC8_PROTEUS_SIM
 
 	} //  END Form1_Load
 
-	private void button1_Click(object sender, EventArgs e)
-    {		// BUTTO 1 COMPILE
-      string pause_command = " ";
-	  string strCmdText = "";
+		private void button1_Click(object sender, EventArgs e)
+		{       // BUTTO 1 COMPILE
+			string pause_command = " ";
+			string strCmdText = "";
+			// prevent freezing of the form
+			// Application.DoEvents();
+				if (File.Exists(@"main.hex"))
+				{
+					strCmdText = "/C del main.hex";
+					System.Diagnostics.Process.Start(@"CMD.exe", strCmdText);
+				}
 
-      if (File.Exists(@"main.hex"))
-	  {
-		strCmdText = "/C del main.hex";
-		System.Diagnostics.Process.Start(@"CMD.exe", strCmdText);
-	  }
+            
+			Task.Delay(1000).Wait();
 
-	  label12.BackColor = Color.Red;
-	  label12.Text = "COMPILER IS STARTED";
+            if (File.Exists(@"main.hex"))
+            {
+                label12.BackColor = Color.LimeGreen;
+                label12.Text = "main.hex FILE IS CREATED\nIN CURRENT FOLDER";
+            }
+            else
+            {
+                label12.BackColor = Color.Red;
+                label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
+            }
 
-	  Task.Delay(1000).Wait();
+            label12.BackColor = Color.LimeGreen;
+            label12.Text = "COMPILING STARTED WAIT FOR main.hex FILE";
 
-	  pic_micro_device = textBox1.Text;
-	   compiler_version_use = comboBox1.Text;
-     
-      if (comboBox2.Text == "LEVEL 0")
-      { optimization_level = ""; }
+            //Task.Delay(1000).Wait();
 
-	  if (comboBox2.Text == "LEVEL 1")
-	  { optimization_level = "-O1"; }
+				pic_micro_device = textBox1.Text;
+				compiler_version_use = comboBox1.Text;
 
-	  if (comboBox2.Text == "LEVEL 2")
-	  { optimization_level = "-O2"; }
+				if (comboBox2.Text == "LEVEL 0")
+				{ optimization_level = ""; }
 
-	  if (comboBox2.Text == "LEVEL 3")
-	  { optimization_level = "-O3";
-      
-      }
+				if (comboBox2.Text == "LEVEL 1")
+				{ optimization_level = "-O1"; }
 
-	  if (textBox5.Text == "0")
-	  { offset_value = ""; }
+				if (comboBox2.Text == "LEVEL 2")
+				{ optimization_level = "-O2"; }
 
-	  if (textBox5.Text != "0")
-	  { offset_value = "-mcodeoffset=" + textBox5.Text; }
+				if (comboBox2.Text == "LEVEL 3")
+				{
+					optimization_level = "-O3";
 
-      // example of using CMD command for compiler
-      //string COMPILER_COMMAND = "C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=18F47K42 -O2 -o main.hex main.c initcpu.c -mcodeoffset=1000\r\n";
+				}
 
-      // echo in CMD executed command put all in one
-      //COMPILER_COMMAND = "/K echo" + COMPILER_XC8_PATH + " -mcpu=" + pic_micro_device + optimization_level + "-o main.hex main.c initcpu.c" + offset_value;
+				if (textBox5.Text == "0")
+				{ offset_value = ""; }
 
-      // example for execute working command for project
-      // COMPILER_COMMAND = "/K C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=16F1829 -o main.hex main.c initcpu.c\r\n";
+				if (textBox5.Text != "0")
+				{ offset_value = "-mcodeoffset=" + textBox5.Text; }
 
-      EXECUTE_COMMAND_ECHO = "/K echo " + COMPILER_XC8_PATH + compiler_version_use + xc8_cc_string + pause_command + "-mcpu=" + pic_micro_device + pause_command + optimization_level + " -o main.hex main.c initcpu.c" + pause_command + offset_value;
+				// example of using CMD command for compiler
+				//string COMPILER_COMMAND = "C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=18F47K42 -O2 -o main.hex main.c initcpu.c -mcodeoffset=1000\r\n";
 
-	  EXECUTE_COMMAND = "/K " + COMPILER_XC8_PATH + compiler_version_use + xc8_cc_string + pause_command + "-mcpu=" + pic_micro_device + pause_command + optimization_level + " -o main.hex main.c initcpu.c" + pause_command + offset_value;
+				// echo in CMD executed command put all in one
+				//COMPILER_COMMAND = "/K echo" + COMPILER_XC8_PATH + " -mcpu=" + pic_micro_device + optimization_level + "-o main.hex main.c initcpu.c" + offset_value;
 
-      label10.Text = EXECUTE_COMMAND;
+				// example for execute working command for project
+				// COMPILER_COMMAND = "/K C:\\PROGRA~1\\Microchip\\xc8\\v2.45\\bin\\xc8-cc -mcpu=16F1829 -o main.hex main.c initcpu.c\r\n";
 
-	  System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND_ECHO);
-	  System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND);
+				EXECUTE_COMMAND_ECHO = "/K echo " + COMPILER_XC8_PATH + compiler_version_use + xc8_cc_string + pause_command + "-mcpu=" + pic_micro_device + pause_command + optimization_level + " -o main.hex main.c initcpu.c" + pause_command + offset_value;
 
-	  while (!File.Exists(@"main.hex"))
-	  {
-        // wait compiler to make main.hex file
-	  }
+				EXECUTE_COMMAND = "/K " + COMPILER_XC8_PATH + compiler_version_use + xc8_cc_string + pause_command + "-mcpu=" + pic_micro_device + pause_command + optimization_level + " -o main.hex main.c initcpu.c" + pause_command + offset_value;
 
-	  if (File.Exists(@"main.hex"))
-	  {
-		label12.BackColor = Color.LimeGreen;
-		label12.Text = "main.hex FILE IS CREATED";
-	  }
+				label10.Text = EXECUTE_COMMAND;
+			 
 
-	}
+            System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND_ECHO);
+				System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND);
+
+				while (!File.Exists(@"main.hex"))
+				{
+					Task.Delay(1000).Wait();
+                    // wait compiler to make main.hex file
+                    if (!File.Exists(@"main.hex"))
+                    {
+                        label12.BackColor = Color.Red;
+                    label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
+                    break;
+                    }
+                }
+
+				if (File.Exists(@"main.hex"))
+				{
+					label12.BackColor = Color.LimeGreen;
+					label12.Text = "main.hex FILE IS CREATED\nIN CURRENT FOLDER";
+				}
+				else
+                {
+                    label12.BackColor = Color.Red;
+                    label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
+                }
+            
+		}
 
 	private void button4_Click(object sender, EventArgs e)
 	{       // BUTTON 4 CMD OPEN FOLDER

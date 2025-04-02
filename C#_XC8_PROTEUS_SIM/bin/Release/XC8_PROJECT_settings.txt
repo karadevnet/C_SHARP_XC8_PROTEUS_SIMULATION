@@ -10,7 +10,7 @@ PROJECTDESCRIPTION=using PIC16F1829 for test
 // set microchip device for project
 PICDEVICE=PIC16F1829
 // set default version of XC8 compiler
-XC8_VERSION=xc8\v2.45
+XC8_VERSION=xc8\v3.00
 // set default optimization for project
 OPTIMIZATION=LEVEL 0
 // set offset value for project

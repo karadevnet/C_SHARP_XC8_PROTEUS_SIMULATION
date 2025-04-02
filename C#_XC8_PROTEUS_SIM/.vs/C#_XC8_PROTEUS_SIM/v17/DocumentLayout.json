@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\C#_PROJECTS_2025_MART\\C_SHARP_XC8_PROTEUS_SIMULATION\\C#_XC8_PROTEUS_SIM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7BDCAFD4-C6D0-4D4D-8FE5-015E3545F799}|C#_XC8_PROTEUS_SIM.csproj|E:\\C#_PROJECTS_2025_MART\\C_SHARP_XC8_PROTEUS_SIMULATION\\C#_XC8_PROTEUS_SIM\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BDCAFD4-C6D0-4D4D-8FE5-015E3545F799}|C#_XC8_PROTEUS_SIM.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BDCAFD4-C6D0-4D4D-8FE5-015E3545F799}|C#_XC8_PROTEUS_SIM.csproj|e:\\c#_projects_2025_mart\\c_sharp_xc8_proteus_simulation\\c#_xc8_proteus_sim\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7BDCAFD4-C6D0-4D4D-8FE5-015E3545F799}|C#_XC8_PROTEUS_SIM.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\C#_PROJECTS_2025_MART\\C_SHARP_XC8_PROTEUS_SIMULATION\\C#_XC8_PROTEUS_SIM\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "E:\\C#_PROJECTS_2025_MART\\C_SHARP_XC8_PROTEUS_SIMULATION\\C#_XC8_PROTEUS_SIM\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAiwLcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T13:56:44.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\C#_PROJECTS_2025_MART\\C_SHARP_XC8_PROTEUS_SIMULATION\\C#_XC8_PROTEUS_SIM\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "E:\\C#_PROJECTS_2025_MART\\C_SHARP_XC8_PROTEUS_SIMULATION\\C#_XC8_PROTEUS_SIM\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T13:56:44.702Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
