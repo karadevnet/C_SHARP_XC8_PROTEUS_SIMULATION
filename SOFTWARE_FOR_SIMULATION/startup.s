@@ -1,6 +1,6 @@
 
-	; Microchip MPLAB XC8 C Compiler V2.45
-	; Copyright (C) 2023 Microchip Technology Inc.
+	; Microchip MPLAB XC8 C Compiler V3.00
+	; Copyright (C) 2024 Microchip Technology Inc.
 
 	; Auto-generated runtime startup code for final link stage.
 
@@ -34,6 +34,7 @@
 	psect	eeprom_data,class=EEDATA,delta=2,space=3,noexec
 	psect	strings,class=CODE,delta=2,reloc=256
 	psect	intentry,class=CODE,delta=2
+	psect	sivt,class=CODE,delta=2
 	psect	functab,class=ENTRY,delta=2
 	global	intlevel0,intlevel1,intlevel2, intlevel3, intlevel4, intlevel5
 intlevel0:

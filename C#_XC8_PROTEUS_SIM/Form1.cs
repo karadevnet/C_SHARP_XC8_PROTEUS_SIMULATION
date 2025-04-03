@@ -243,6 +243,9 @@ namespace C__XC8_PROTEUS_SIM
                     }
                 }
 
+				Task.Delay(1000).Wait();
+
+            // check if file is created
 				if (File.Exists(@"main.hex"))
 				{
 					label12.BackColor = Color.LimeGreen;

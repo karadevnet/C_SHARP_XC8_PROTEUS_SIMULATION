@@ -80,7 +80,9 @@ __Lheap 0 0 HEAP 7
 __Hinit 2 0 CODE 0
 __Linit 2 0 CODE 0
 __end_of_main 7FC 0 CODE 0
+__Hsivt 2 0 CODE 0
 __Htext 0 0 ABS 0
+__Lsivt 2 0 CODE 0
 __Ltext 0 0 ABS 0
 ___heap_lo 0 0 ABS 0
 end_of_initialization 7FD 0 CODE 0
@@ -254,8 +256,8 @@ text1 E82 EE7 CODE E82 0
 %locals
 startup.o
 startup.s
-69 0 0 CODE 0
-103 2 0 CODE 0
+70 0 0 CODE 0
+104 2 0 CODE 0
 main.o
 main.s
 1166 7FC 0 CODE 0
