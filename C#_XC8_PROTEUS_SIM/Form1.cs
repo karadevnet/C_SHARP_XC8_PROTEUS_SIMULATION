@@ -171,7 +171,7 @@ namespace C__XC8_PROTEUS_SIM
 
             
 			Task.Delay(1000).Wait();
-
+			/*
             if (File.Exists(@"main.hex"))
             {
                 label12.BackColor = Color.LimeGreen;
@@ -182,6 +182,7 @@ namespace C__XC8_PROTEUS_SIM
                 label12.BackColor = Color.Red;
                 label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
             }
+			*/
 
             label12.BackColor = Color.LimeGreen;
             label12.Text = "COMPILING STARTED WAIT FOR main.hex FILE";
@@ -235,11 +236,11 @@ namespace C__XC8_PROTEUS_SIM
 				{
 					Task.Delay(1000).Wait();
                     // wait compiler to make main.hex file
-                    if (!File.Exists(@"main.hex"))
+                    if (File.Exists(@"main.hex"))
                     {
-                        label12.BackColor = Color.Red;
-                    label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
-                    break;
+                        label12.BackColor = Color.LimeGreen;
+						label12.Text = "FILE main.hex CREATED IN SAME FOLDER";
+						 break;
                     }
                 }
 
