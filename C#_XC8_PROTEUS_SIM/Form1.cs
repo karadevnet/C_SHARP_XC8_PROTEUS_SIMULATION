@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -45,10 +46,12 @@ namespace C__XC8_PROTEUS_SIM
 
 	// need for File. class functions
 	StreamReader streamReader = null;
+		//Timer timer; //= new Timer();
 
-	// EXTRACT from C#_XC8_PROTEUS_SIM.exe file all embedded resource
-	// asembly files add to exe and paths for different folders
-	public static void Assembly_eXtract
+
+        // EXTRACT from C#_XC8_PROTEUS_SIM.exe file all embedded resource
+        // asembly files add to exe and paths for different folders
+        public static void Assembly_eXtract
             (string nameSpace, string extract_Directory,
             string internal_Filepath, string resource_Name)
     {
@@ -60,6 +63,7 @@ namespace C__XC8_PROTEUS_SIM
       using (BinaryWriter binaryWriter = new BinaryWriter(fileSystem))
 
         binaryWriter.Write(binaryReader.ReadBytes((int)stream_extract.Length));
+
     }
 
     public Form1()
@@ -71,7 +75,8 @@ namespace C__XC8_PROTEUS_SIM
 
     private void Form1_Load(object sender, EventArgs e)
     {
-	  label12.BackColor = Color.Red;
+            
+      label12.BackColor = Color.Red;
 	  label12.ForeColor = Color.Black;
 	  label12.Text = "COMPILER IS STOPED";
 
@@ -93,17 +98,14 @@ namespace C__XC8_PROTEUS_SIM
             comboBox1.Items.Add(xc8_folder.Substring(27));
             //comboBox1.SelectedIndex = 0;
           }
-		      
+
                 comboBox1.BackColor = Color.LimeGreen;
-
-
-              
-           }
+         }
             else
-		{
+			{
 			comboBox1.BackColor = Color.Red;
 			comboBox1.Text = "NO XC8";
-        }
+			}
             
       // found if PROTEUS is installed
       if (File.Exists(PROTEUS_path_exist))
@@ -157,7 +159,10 @@ namespace C__XC8_PROTEUS_SIM
 
 	} //  END Form1_Load
 
-		private void button1_Click(object sender, EventArgs e)
+        
+        
+
+        private void button1_Click(object sender, EventArgs e)
 		{       // BUTTO 1 COMPILE
 			string pause_command = " ";
 			string strCmdText = "";
@@ -171,20 +176,8 @@ namespace C__XC8_PROTEUS_SIM
 
             
 			Task.Delay(1000).Wait();
-			/*
-            if (File.Exists(@"main.hex"))
-            {
-                label12.BackColor = Color.LimeGreen;
-                label12.Text = "main.hex FILE IS CREATED\nIN CURRENT FOLDER";
-            }
-            else
-            {
-                label12.BackColor = Color.Red;
-                label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
-            }
-			*/
-
-            label12.BackColor = Color.LimeGreen;
+			
+            label12.BackColor = Color.Yellow;
             label12.Text = "COMPILING STARTED WAIT FOR main.hex FILE";
 
             //Task.Delay(1000).Wait();
@@ -227,38 +220,20 @@ namespace C__XC8_PROTEUS_SIM
 				EXECUTE_COMMAND = "/K " + COMPILER_XC8_PATH + compiler_version_use + xc8_cc_string + pause_command + "-mcpu=" + pic_micro_device + pause_command + optimization_level + " -o main.hex main.c initcpu.c" + pause_command + offset_value;
 
 				label10.Text = EXECUTE_COMMAND;
-			 
 
-            System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND_ECHO);
-				System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND);
 
-				while (!File.Exists(@"main.hex"))
-				{
-					Task.Delay(1000).Wait();
-                    // wait compiler to make main.hex file
-                    if (File.Exists(@"main.hex"))
-                    {
-                        label12.BackColor = Color.LimeGreen;
-						label12.Text = "FILE main.hex CREATED IN SAME FOLDER";
-						 break;
-                    }
-                }
+            //System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND_ECHO);
+            System.Diagnostics.Process.Start("CMD.exe", EXECUTE_COMMAND);
 
-				Task.Delay(1000).Wait();
 
-            // check if file is created
-				if (File.Exists(@"main.hex"))
-				{
-					label12.BackColor = Color.LimeGreen;
-					label12.Text = "main.hex FILE IS CREATED\nIN CURRENT FOLDER";
-				}
-				else
-                {
-                    label12.BackColor = Color.Red;
-                    label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
-                }
+            // start timer 1 second to check if file is created
+
+            //Timer timer = new Timer();
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
             
-		}
+
+        }
 
 	private void button4_Click(object sender, EventArgs e)
 	{       // BUTTON 4 CMD OPEN FOLDER
@@ -283,11 +258,7 @@ namespace C__XC8_PROTEUS_SIM
 		{
 		  System.Diagnostics.Process.Start(@"C:\Program Files\Notepad++\notepad++.exe", "main.c");
 		}
-		//else
-		//	if (File.Exists(current_File_cpp))
-		//{
-		//  System.Diagnostics.Process.Start(@"C:\Program Files\Notepad++\notepad++.exe", "main.cpp");
-		//}
+		
 		else
 		{
 		  strCmdText = "/K echo NO main.cpp OR main.c FILE TO OPEN OPEN NOTEPAD++ with new empty file";
@@ -319,5 +290,26 @@ namespace C__XC8_PROTEUS_SIM
 	{  // BUTTON OPEN PROTEUS
 	  System.Diagnostics.Process.Start(PROTEUS_path_exist);
 	}
-  }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+			if (File.Exists(@"main.hex"))
+			{
+				label12.BackColor = Color.LimeGreen;
+				label12.Text = "main.hex FILE IS CREATED\nIN CURRENT FOLDER";
+				timer1.Stop();
+			}
+			else if (!File.Exists(@"main.hex") && timer1.Enabled)
+			{
+				label12.BackColor = Color.Red;
+				label12.Text = "!!! ERROR IN COMPILER\nmain.hex NOT CREATED !!!";
+                //timer1.Stop();
+            }
+			else if (!File.Exists(@"main.hex") && timer1.Enabled)
+            {
+                label12.BackColor = Color.Yellow;
+                label12.Text = "WAIT FOR main.hex FILE";
+            }
+        }
+    }
 }
